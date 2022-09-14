@@ -5,15 +5,16 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Fragments.TextInputFragment">
+    tools:context=".Fragments.DropdownFragment">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvQuestion"
+        android:id="@+id/tvQuestionDd"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:text="TextInputFragment" />
+        android:text="Dropdown List" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,17 +24,17 @@
         android:layout_marginRight="25dp"
         android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:id="@+id/etInputText"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
-
-        <ImageButton
+        <TextView
+            android:id="@+id/tvDropdownList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_next"/>
+            android:text="Select User:"
+            android:textStyle="bold"
+            android:textSize="15dp" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

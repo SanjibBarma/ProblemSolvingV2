@@ -39,7 +39,6 @@ public class MultipleChoiceFragment extends Fragment {
 
         //set Text View
         String question = questionModel.getQuestion();
-
         tvQuestion.setText("Q: "+question);
 
         for (int i = 0; i < questionModel.getOptions().size(); i++){
@@ -54,10 +53,10 @@ public class MultipleChoiceFragment extends Fragment {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int id) {
-                for (int i = 1; i < radioGroup.getChildCount(); i++) {
-                    //String id1 = String.valueOf(id -1);
-                    //Toasty.success(getContext(), "Mes: "+ questionModel.getOptions().get(Integer.parseInt(id1)).getReferTo(), Toasty.LENGTH_SHORT).show();
-                    String referToId = questionModel.getOptions().get(Integer.parseInt(String.valueOf(id))).getReferTo();
+                for (int i = 0; i < radioGroup.getChildCount(); i++) {
+                    String id1 = String.valueOf(id -1);
+                    Toasty.success(getContext(), "Mes: "+ questionModel.getOptions().get(Integer.parseInt(id1)).getReferTo(), Toasty.LENGTH_SHORT).show();
+                    String referToId = questionModel.getOptions().get(Integer.parseInt(String.valueOf(id1))).getReferTo();
 
                     MainActivity mainActivity = (MainActivity) getActivity();
                     mainActivity.returnResult(referToId);
