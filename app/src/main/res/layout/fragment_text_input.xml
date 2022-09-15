@@ -7,10 +7,34 @@
     android:orientation="vertical"
     tools:context=".Fragments.TextInputFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tvQuestionText"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:text="TextInputFragment" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:id="@+id/etInputText"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgButtonNext"
+            android:src="@drawable/ic_next"/>
+    </LinearLayout>
 
 </LinearLayout>

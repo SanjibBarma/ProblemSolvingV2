@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
 import ltd.test.problemsolving.ApiUtils.APIClient;
 import ltd.test.problemsolving.Fragments.CheckboxFragment;
 import ltd.test.problemsolving.Fragments.DropdownFragment;
@@ -145,10 +146,18 @@ public class MainActivity extends AppCompatActivity implements DataTransferInter
 
 
         //camera fragment will be here
+        if (questionModel.getType().equals("camera")){
+            //Log.d("Question_Data", questionModel.getOptions().get(0).getValue()+"");
+            //Send Data from activity to fragment
+            Intent Intent3=new   Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
+            startActivity(Intent3);
+        }
+
     }
 
+
     @Override
-    public void returnResult(String id) {
-        loadSingleQuestion(questionModelList.get(Integer.parseInt(id)).getId());
+    public void returnResult(int id) {
+        loadSingleQuestion(questionModelList.get(id).getId());
     }
 }

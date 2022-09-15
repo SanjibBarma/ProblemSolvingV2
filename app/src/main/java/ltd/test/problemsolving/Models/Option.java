@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Option implements Serializable {
     @SerializedName("value")
@@ -12,6 +13,7 @@ public class Option implements Serializable {
     @SerializedName("referTo")
     @Expose
     private String referTo;
+
 
     public String getValue() {
         return value;
@@ -27,5 +29,10 @@ public class Option implements Serializable {
 
     public void setReferTo(String referTo) {
         this.referTo = referTo;
+    }
+
+    @Override
+    public String toString() {
+        return  value;
     }
 }
