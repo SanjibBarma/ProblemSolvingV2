@@ -61,16 +61,12 @@ public class MultipleChoiceFragment extends Fragment {
                 for (int i = 0; i < radioGroup.getChildCount(); i++) {
                     String id1 = String.valueOf(id -1);
                     //String id2 = String.valueOf(Integer.parseInt(id1)-1);
-
                     String value = questionModel.getOptions().get(Integer.parseInt(id1)).getReferTo();
                     int value1 = Integer.parseInt(value)-1;
-
                     //Toasty.success(getContext(), "Mes: "+ value1, Toasty.LENGTH_SHORT).show();
-
 
                     MainActivity mainActivity = (MainActivity) getActivity();
                     mainActivity.returnResult(value1);
-
 
                 }
             }

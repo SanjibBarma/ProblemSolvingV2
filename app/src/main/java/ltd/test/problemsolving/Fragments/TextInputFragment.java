@@ -44,7 +44,7 @@ public class TextInputFragment extends Fragment {
 
                 }*/
 
-                int referToValue = Integer.parseInt(questionModel.getReferTo())-1;
+                int referToValue = Integer.parseInt((String) questionModel.getReferTo())-1;
 
                 MainActivity mainActivity=(MainActivity)getActivity();
                 mainActivity.returnResult(referToValue);

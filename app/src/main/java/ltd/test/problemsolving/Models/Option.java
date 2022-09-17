@@ -14,6 +14,10 @@ public class Option implements Serializable {
     @Expose
     private String referTo;
 
+    public Option(String set, int i) {
+    }
+
+
 
     public String getValue() {
         return value;

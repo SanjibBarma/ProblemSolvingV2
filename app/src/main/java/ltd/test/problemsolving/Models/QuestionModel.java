@@ -26,13 +26,13 @@ public class QuestionModel implements Serializable {
 
     @SerializedName("referTo")
     @Expose
-    private String referTo;
+    private Object referTo;
 
-    public String getReferTo() {
+    public Object getReferTo() {
         return referTo;
     }
 
-    public void setReferTo(String referTo) {
+    public void setReferTo(Object referTo) {
         this.referTo = referTo;
     }
 

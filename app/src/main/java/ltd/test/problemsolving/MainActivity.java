@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements DataTransferInter
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             bundle.putSerializable("Question_Data", questionModel);
             fragment.setArguments(bundle);
-            fragmentTransaction.addToBackStack(null);
+            //fragmentTransaction.addToBackStack(null);
             fragmentTransaction.replace(R.id.frameLayoutId, fragment);
             fragmentTransaction.commit();
         }
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements DataTransferInter
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             bundle.putSerializable("Question_Data", questionModel);
             fragment.setArguments(bundle);
-            fragmentTransaction.addToBackStack(null);
+            //fragmentTransaction.addToBackStack(null);
             fragmentTransaction.replace(R.id.frameLayoutId, fragment);
             fragmentTransaction.commit();
         }
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements DataTransferInter
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             bundle.putSerializable("Question_Data", questionModel);
             fragment.setArguments(bundle);
-            fragmentTransaction.addToBackStack(null);
+            //fragmentTransaction.addToBackStack(null);
             fragmentTransaction.replace(R.id.frameLayoutId, fragment);
             fragmentTransaction.commit();
         }
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements DataTransferInter
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             bundle.putSerializable("Question_Data", questionModel);
             fragment.setArguments(bundle);
-            fragmentTransaction.addToBackStack(null);
+            //fragmentTransaction.addToBackStack(null);
             fragmentTransaction.replace(R.id.frameLayoutId, fragment);
             fragmentTransaction.commit();
         }
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements DataTransferInter
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             bundle.putSerializable("Question_Data", questionModel);
             fragment.setArguments(bundle);
-            fragmentTransaction.addToBackStack(null);
+            //fragmentTransaction.addToBackStack(null);
             fragmentTransaction.replace(R.id.frameLayoutId, fragment);
             fragmentTransaction.commit();
         }

@@ -7,10 +7,18 @@
     android:gravity="center"
     tools:context=".Fragments.CheckboxFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tvQuestionCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckboxFragment" />
+        android:text="Q: Checkbox Question"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_item"
+        android:choiceMode="singleChoice"/>
 
 </LinearLayout>
