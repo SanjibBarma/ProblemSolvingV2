@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvQuestion"
+        android:id="@+id/tvQuestionNumberInput"
         android:textColor="@color/black"
         android:textSize="20sp"
        android:text="NumberInputFragment" />
@@ -28,12 +28,14 @@
             android:layout_height="50dp"
             android:id="@+id/etInputNumber"
             android:textSize="20sp"
+            android:inputType="number"
             android:textColor="@color/black"/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_next"/>
+            android:src="@drawable/ic_next"
+            android:id="@+id/idImgBtnNext"/>
     </LinearLayout>
 
 </LinearLayout>

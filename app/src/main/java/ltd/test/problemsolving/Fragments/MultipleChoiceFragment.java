@@ -1,5 +1,7 @@
 package ltd.test.problemsolving.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import es.dmoral.toasty.Toasty;
 import ltd.test.problemsolving.Interface.DataTransferInterface;
@@ -23,6 +26,7 @@ public class MultipleChoiceFragment extends Fragment {
 
     TextView tvQuestion;
     RadioGroup radioGroup;
+    QuestionModel questionModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,7 +38,7 @@ public class MultipleChoiceFragment extends Fragment {
         radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
 
         //getData from Activity
-        QuestionModel questionModel = (QuestionModel) getArguments().getSerializable("Question_Data");
+        questionModel = (QuestionModel) getArguments().getSerializable("Question_Data");
 
 
         //set Text View
@@ -60,14 +64,21 @@ public class MultipleChoiceFragment extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int id) {
                 for (int i = 0; i < radioGroup.getChildCount(); i++) {
                     String id1 = String.valueOf(id -1);
-                    //String id2 = String.valueOf(Integer.parseInt(id1)-1);
                     String value = questionModel.getOptions().get(Integer.parseInt(id1)).getReferTo();
                     int value1 = Integer.parseInt(value)-1;
                     //Toasty.success(getContext(), "Mes: "+ value1, Toasty.LENGTH_SHORT).show();
 
+                    //starting next fragment through MainActivity
                     MainActivity mainActivity = (MainActivity) getActivity();
                     mainActivity.returnResult(value1);
 
+                    //save data to sharedPref
+                    String answer = questionModel.getOptions().get(Integer.parseInt(id1)).getValue();
+                    SharedPreferences sharedPreferences = getContext().getSharedPreferences("problemSolvingQnA", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("multi_question", question);
+                    editor.putString("multi_ans", answer);
+                    editor.commit();
                 }
             }
         });
@@ -76,6 +87,5 @@ public class MultipleChoiceFragment extends Fragment {
 
         return view;
     }
-
 
 }

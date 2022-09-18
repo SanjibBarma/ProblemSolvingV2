@@ -1,5 +1,7 @@
 package ltd.test.problemsolving.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,8 +40,8 @@ public class CheckboxFragment extends Fragment {
         textView = (TextView) view.findViewById(R.id.tvQuestionCheckBox);
         listView = (ListView) view.findViewById(R.id.list_item);
 
-        QuestionModel questionModel = (QuestionModel) getArguments().getSerializable("Question_Data");
         //set Text View
+        QuestionModel questionModel = (QuestionModel) getArguments().getSerializable("Question_Data");
         String question = questionModel.getQuestion();
         textView.setText("Q: "+question);
 
@@ -62,6 +64,14 @@ public class CheckboxFragment extends Fragment {
                     //Toasty.success(getContext(), "Mes: "+ value1, Toasty.LENGTH_SHORT).show();
                     MainActivity mainActivity = (MainActivity) getActivity();
                     mainActivity.returnResult(value1);
+
+                    //save data to sharedPref
+                    String answer = questionModel.getOptions().get(position).getValue();
+                    SharedPreferences sharedPreferences = getContext().getSharedPreferences("problemSolvingQnA", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("checkBox_question", question);
+                    editor.putString("checkBox_ans", answer);
+                    editor.commit();
                 }
             }
         });
@@ -78,6 +88,4 @@ public class CheckboxFragment extends Fragment {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }
